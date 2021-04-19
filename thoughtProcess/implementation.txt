@@ -1,0 +1,6 @@
+The thought process behind the endpoints created. I assumed that users had their NIN already, the first endpoint userInfo was to create basic user information and save it on the database, while making sure the phone number inputed is a number and not greater than or less than 11 and that it does not already exist in the database. I further provided an endpoint to be able to retrieve all users basic information.
+
+In order to link their NIN, I created another endpoint that searches the database for a specific user with a unique Id and then accepts the NIN input by the user, which is also validated to consist of numbers and has the required length, then hashed so that it can not be accessed even from the database, and then finally is linked to that user. We can access all the users who have linked their NIN to see their information.
+
+With the presence of a UI that would navigate the different routes, a payment endpoint would be created which will debit the user's wallet of a specific amount before the link endpoint can be accessed. This can be achieved with a button which it's state will change to true if payment is successful and then navigate user to linking their NIN. 
+
